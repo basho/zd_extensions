@@ -1,0 +1,49 @@
+<h1>WIP Dashboard</h1>
+
+<div class="priority_group urgent">
+    <h2 class="group_heading">urgent</h2>
+    <div class="group_data">
+        {{#each urgents}}
+            <div id="ticket-{{id}}" class="ticket">
+                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="priority_group high">
+    <h2 class="group_heading">high</h2>
+    <div class="group_data">
+        {{#each highs}}
+            <div id="ticket-{{id}}" class="ticket">
+                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="priority_group normal">
+    <h2 class="group_heading">normal</h2>
+    <div class="group_data">
+        {{#each normals}}
+            <div id="ticket-{{id}}" class="ticket">
+                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<div class="priority_group low">
+    <h2 class="group_heading">low</h2>
+    <div class="group_data">
+        {{#each lows}}
+            <div id="ticket-{{id}}" class="ticket">
+                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+            </div>
+        {{/each}}
+    </div>
+</div>

@@ -1,0 +1,3 @@
+<h2>Fetching Ticket Data</h2>
+<p>{{spinner "dotted"}}</p>
+<p>Please stand by...</p>

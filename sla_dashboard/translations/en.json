@@ -1,0 +1,13 @@
+{
+  "app": {
+    "package": "basho_zd_dashboard",
+    "description": {
+      "value": "Visual dashboard displaying ticket SLA pressure",
+      "title": "Description"
+    },
+    "name": {
+      "value": "SLA Pressure Dashboard",
+      "title": "Name"
+    }
+  }
+}

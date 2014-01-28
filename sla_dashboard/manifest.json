@@ -1,0 +1,12 @@
+{
+  "name": "SLA Pressure Dashboard",
+  "author": {
+    "name": "Alex Berghage",
+    "email": "aberghage@basho.com"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": "nav_bar",
+  "version": "1.0.5",
+  "frameworkVersion": "0.5"
+}

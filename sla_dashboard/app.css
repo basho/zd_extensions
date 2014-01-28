@@ -1,0 +1,45 @@
+.ticket_clock {
+    height: 100px;
+    width: 100px;
+}
+
+.ticket {
+    width: 100px;
+    text-align: center;
+    display: inline-block;
+}
+.ticket a {
+    font-weight: lighter;
+    font-size: 1.2em;
+}
+
+.clock_spent {
+
+}
+
+.clock_remaining {
+
+}
+
+.priority_group {
+    min-height: 120px;
+    width: auto;
+}
+
+.group_heading {
+    padding-top: 1.5em;
+    float: left;
+    text-align: right;
+    display: inline;
+
+    font-size: 3.8em;
+    color: #cccccc;
+
+    width: 3.8em;
+}
+
+.group_data {
+    padding: 0.8em 0em 0.8em 1.8em;
+    width: auto;
+    display: inline-block;
+}
