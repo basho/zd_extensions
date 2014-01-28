@@ -31,7 +31,10 @@ If you just want to build a package, run
 
     echo 'http://basho.zendesk.com' | zat package
 
-to produce a zipfile in tmp/ that you can upload to Zendesk.
+to produce a zipfile in tmp/ that you can upload to Zendesk. If you deploy
+a new package to ZD, please bump the version and tag it, so we know what's
+actually running and can roll back easily. Use semver, to the extent that
+you can.
 
 ## Stuff that needs to be done:
 
