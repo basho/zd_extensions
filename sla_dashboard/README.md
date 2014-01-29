@@ -46,3 +46,5 @@ you can.
  6. Add a Makefile to manage all the project build bits, also add sass or less.
  7. Come up with a better way of managing multiple graphs and multiple views
     than the single `drawGraphics()` call used now.
+ 8. Handle rate-limiting messages from ZD
+ 9. Switch to side-loading on ticket info requests to decrease HTTP noise (http://developer.zendesk.com/documentation/rest_api/introduction.html)
