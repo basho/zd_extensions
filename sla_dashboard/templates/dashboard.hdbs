@@ -1,65 +1,65 @@
 <h1>WIP Dashboard</h1>
 
-<div class="priority_group urgent">
-    <h2 class="group_heading">urgent</h2>
-    <div class="group_data">
+<table class="data_table" width="100%">
+<tr class="priority_group urgent">
+<td class="group_heading">urgent</td>
+<td>        
         {{#each urgents}}
-            <a href="#/tickets/{{id}}" class="ticket_link">
-            <div id="ticket-{{id}}" class="ticket">
-                <div class="ticket_number">{{id}}</div>
-                <div class="time_remaining">{{time_remaining}}</div>
+            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-                <div class="assignee">{{assignee}}</div>
-            </div>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
             </a>
         {{/each}}
-    </div>
-</div>
-
-<div class="priority_group high">
-    <h2 class="group_heading">high</h2>
-    <div class="group_data">
+<td>
+</tr>
+<tr class="priority_group high">
+<td class="group_heading">high</td>
+<td>        
         {{#each highs}}
-            <a href="#/tickets/{{id}}" class="ticket_link">
-            <div id="ticket-{{id}}" class="ticket">
-                <div class="ticket_number">{{id}}</div>
-                <div class="time_remaining">{{time_remaining}}</div>
+            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-                <div class="assignee">{{assignee}}</div>
-            </div>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
             </a>
         {{/each}}
-    </div>
-</div>
-
-<div class="priority_group normal">
-    <h2 class="group_heading">normal</h2>
-    <div class="group_data">
+<td>
+</tr>
+<tr class="priority_group normal">
+<td class="group_heading">normal</td>
+<td>        
         {{#each normals}}
-            <a href="#/tickets/{{id}}" class="ticket_link">
-            <div id="ticket-{{id}}" class="ticket">
-                <div class="ticket_number">{{id}}</div>
-                <div class="time_remaining">{{time_remaining}}</div>
+            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-                <div class="assignee">{{assignee}}</div>
-            </div>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
             </a>
         {{/each}}
-    </div>
-</div>
-
-<div class="priority_group low">
-    <h2 class="group_heading">low</h2>
-    <div class="group_data">
+<td>
+</tr>
+<tr class="priority_group low">
+<td class="group_heading">low</td>
+<td>        
         {{#each lows}}
-            <a href="#/tickets/{{id}}" class="ticket_link">
-            <div id="ticket-{{id}}" class="ticket">
-                <div class="ticket_number">{{id}}</div>
-                <div class="time_remaining">{{time_remaining}}</div>
+            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-                <div class="assignee">{{assignee}}</div>
-            </div>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
             </a>
         {{/each}}
-    </div>
-</div>
+<td>
+</tr>
+</table>
+

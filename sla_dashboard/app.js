@@ -198,7 +198,7 @@
 
         var moments_remaining = moment.duration(this.ticket_records[id].time_allowed, 'hours').subtract(this.ticket_records[id].time_spent);
         this.ticket_records[id].moments_remaining = moments_remaining;
-        this.ticket_records[id].time_remaining = moments_remaining.format("H:mm:ss");
+        this.ticket_records[id].time_remaining = moments_remaining.format("H mm");
 
 
 

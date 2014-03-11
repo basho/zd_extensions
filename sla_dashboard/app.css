@@ -1,63 +1,67 @@
-
-@font-face {
-    font-family: 'DigitalCounter7';
-    src: url('DigitalCounter7.eot?') format('eot'), 
-         url('DigitalCounter7.woff') format('woff'), 
-         url('DigitalCounter7.ttf')  format('truetype'),
-         url('DigitalCounter7.svg#DigitalCounter7') format('svg');
+.data_table {
+    width:100%;
 }
+
 
 .ticket_clock {
     height: 100px;
     width: 100px;
+    position: relative;
 }
 
-.ticket_link:link {
+.ticket:link {
     background:#fff;
 }
 
-.ticket_link:hover {
-    background:#ccc;
+.ticket:hover {
+    background: rgba(255, 255, 0, 0.1);
 }
 
-.ticket_link:active {
+.ticket:active {
     background:#eee;
 }
 
 .ticket {
     width: 100px;
+    height: 120px;
     text-align: center;
+    border-radius: 10px;
     display: inline-block;
+    overflow: hidden;   
+}
+
+.ticket_info { 
+    width:100px; 
+    height:100px;
+    top:-100px;
+    position:relative;
 }
 
 .ticket_number {
-    font-weight: bold;
+    text-align:center;
     font-size: 1.3em;
-    float:right;
+    margin-top: 20px;
     width:100%;
-    top:25px;
-    position: relative;
-    height:0px;
-    overflow:visible;
 }
+
 .time_remaining {
+    text-align:center;
     font-family: 'DigitalCounter7';
-    font-size: 1em;
-    float:right;
-    width:100%;
-    top:50px;
-    position: relative;
-    height:0px;
-    overflow:visible;
+    width:50px;
+    font-size: .8em;
+    border: 2px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3px;
+    background: #eee;
+    color: #333;
+    border-radius: 6px;
 }
 
 .assignee {
-    float:left;
-    position: relative;
+    text-align:center;
+    margin-top:25px;
     width:100%;
-    top:-15px;
-    height:0px;
-    overflow:visible;
 }
 
 .clock_spent {
@@ -69,25 +73,28 @@
 }
 
 .priority_group {
-    min-height: 110px;
+    min-height: 140px;
     width: auto;
+    border-bottom: 1px solid #eee;
 }
 
 .group_heading {
-    padding-top: 1.5em;
-    float: left;
+    padding-right:.5em;
     text-align: right;
-    display: inline;
-
-    font-size: 3.8em;
-    color: #cccccc;
-
-    width: 3.8em;
+    font-size: 2em;
+    color: #ccc;
 }
 
+.group_datas {
+margin:0;
+padding:0; 
+margin-left: 9em;
+position:relative;
+top: -2em;  
+
+}
 .group_data {
     padding: 0.8em 0em 0.8em 1.8em;
     width: auto;
     display: inline-block;
 }
-
