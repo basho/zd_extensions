@@ -1,6 +1,27 @@
+
+@font-face {
+    font-family: 'DigitalCounter7';
+    src: url('DigitalCounter7.eot?') format('eot'), 
+         url('DigitalCounter7.woff') format('woff'), 
+         url('DigitalCounter7.ttf')  format('truetype'),
+         url('DigitalCounter7.svg#DigitalCounter7') format('svg');
+}
+
 .ticket_clock {
     height: 100px;
     width: 100px;
+}
+
+.ticket_link:link {
+    background:#fff;
+}
+
+.ticket_link:hover {
+    background:#ccc;
+}
+
+.ticket_link:active {
+    background:#eee;
 }
 
 .ticket {
@@ -8,9 +29,35 @@
     text-align: center;
     display: inline-block;
 }
-.ticket a {
-    font-weight: lighter;
-    font-size: 1.2em;
+
+.ticket_number {
+    font-weight: bold;
+    font-size: 1.3em;
+    float:right;
+    width:100%;
+    top:25px;
+    position: relative;
+    height:0px;
+    overflow:visible;
+}
+.time_remaining {
+    font-family: 'DigitalCounter7';
+    font-size: 1em;
+    float:right;
+    width:100%;
+    top:50px;
+    position: relative;
+    height:0px;
+    overflow:visible;
+}
+
+.assignee {
+    float:left;
+    position: relative;
+    width:100%;
+    top:-15px;
+    height:0px;
+    overflow:visible;
 }
 
 .clock_spent {
@@ -22,7 +69,7 @@
 }
 
 .priority_group {
-    min-height: 120px;
+    min-height: 110px;
     width: auto;
 }
 
@@ -43,3 +90,4 @@
     width: auto;
     display: inline-block;
 }
+
