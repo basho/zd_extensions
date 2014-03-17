@@ -1,45 +1,89 @@
+.data_table {
+    width:100%;
+}
+
 .ticket_clock {
     height: 100px;
     width: 100px;
+    position: relative;
+}
+
+.ticket:link {
+    background:#fff;
+}
+
+.ticket:hover {
+    background: rgba(255, 255, 0, 0.1);
+}
+
+.ticket:active {
+    background:#eee;
 }
 
 .ticket {
+    margin-top:10px;
     width: 100px;
-    text-align: center;
+    height: 120px;
+    border-radius: 10px;
     display: inline-block;
-}
-.ticket a {
-    font-weight: lighter;
-    font-size: 1.2em;
+    overflow: hidden;   
 }
 
-.clock_spent {
-
+.ticket_info { 
+    width:100px; 
+    height:100px;
+    top:-100px;
+    position:relative;
 }
 
-.clock_remaining {
+.ticket_number {
+    text-align:center;
+    font-size: 1.3em;
+    margin-top: 20px;
+    width:100%;
+}
 
+.time_remaining {
+    text-align:center;
+    width:55px;
+    font-size: .8em;
+    border: 2px solid #ddd;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3px;
+    background: #eee;
+    color: #333;
+    border-radius: 6px;
+}
+
+.assignee {
+    text-align:center;
+    margin-top:25px;
+    width:100%;
 }
 
 .priority_group {
-    min-height: 120px;
+    height: 120px;
     width: auto;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
-.group_heading {
-    padding-top: 1.5em;
-    float: left;
+td.group_heading {
+    width:120px;
+    padding-right:.5em;
     text-align: right;
-    display: inline;
-
-    font-size: 3.8em;
-    color: #cccccc;
-
-    width: 3.8em;
+    font-size: 2.5em;
+    color: #aaa;
+    vertical-align: bottom;
 }
 
 .group_data {
     padding: 0.8em 0em 0.8em 1.8em;
     width: auto;
     display: inline-block;
+}
+
+table{
+    table-layout: fixed;
 }

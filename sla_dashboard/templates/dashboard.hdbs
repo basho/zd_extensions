@@ -1,49 +1,89 @@
-<h1>WIP Dashboard</h1>
-
-<div class="priority_group urgent">
-    <h2 class="group_heading">urgent</h2>
-    <div class="group_data">
+<h1>SLA Overview Dashboard</h1>
+<br />
+<table class="data_table" width="100%">
+<tr class="priority_group urgent">
+<td class="group_heading"><div class="header_text">urgent</div></td>
+<td>        
         {{#each urgents}}
-            <div id="ticket-{{id}}" class="ticket">
-                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
-                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-            </div>
-        {{/each}}
-    </div>
-</div>
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
 
-<div class="priority_group high">
-    <h2 class="group_heading">high</h2>
-    <div class="group_data">
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
+            </a>
+        {{/each}}
+</td>
+</tr>
+<tr class="priority_group high">
+<td class="group_heading"><div class="header_text">high</div></td>
+<td>        
         {{#each highs}}
-            <div id="ticket-{{id}}" class="ticket">
-                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
-                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-            </div>
-        {{/each}}
-    </div>
-</div>
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
 
-<div class="priority_group normal">
-    <h2 class="group_heading">normal</h2>
-    <div class="group_data">
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
+            </a>
+        {{/each}}
+</td>
+</tr>
+<tr class="priority_group normal">
+<td class="group_heading"><div class="header_text">normal</div></td>
+<td>        
         {{#each normals}}
-            <div id="ticket-{{id}}" class="ticket">
-                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
-                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-            </div>
-        {{/each}}
-    </div>
-</div>
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
 
-<div class="priority_group low">
-    <h2 class="group_heading">low</h2>
-    <div class="group_data">
-        {{#each lows}}
-            <div id="ticket-{{id}}" class="ticket">
-                <h3><a href="#/tickets/{{id}}">{{id}}</a></h3>
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
-            </div>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
+            </a>
         {{/each}}
-    </div>
-</div>
+</td>
+</tr>
+<tr class="priority_group low">
+<td class="group_heading"><div class="header_text">low</div></td>
+<td>        
+        {{#each lows}}
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
+
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+                <svg id="dwg-{{id}}" class="ticket_clock"></svg>
+                <div class="ticket_info">
+                    <div class="ticket_number">{{id}}</div>
+                    <div class="time_remaining">{{time_remaining}}</div>
+                    <div class="assignee">{{assignee}}</div>
+                </div>
+            </a>
+        {{/each}}
+</td>
+</tr>
+</table>
+
