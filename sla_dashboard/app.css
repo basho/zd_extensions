@@ -2,7 +2,6 @@
     width:100%;
 }
 
-
 .ticket_clock {
     height: 100px;
     width: 100px;
@@ -22,9 +21,9 @@
 }
 
 .ticket {
+    margin-top:10px;
     width: 100px;
     height: 120px;
-    text-align: center;
     border-radius: 10px;
     display: inline-block;
     overflow: hidden;   
@@ -46,8 +45,8 @@
 
 .time_remaining {
     text-align:center;
-    font-family: 'DigitalCounter7';
-    width:50px;
+/*    font-family: 'DigitalCounter7'; */
+    width:55px;
     font-size: .8em;
     border: 2px solid #ddd;
     margin-left: auto;
@@ -64,37 +63,28 @@
     width:100%;
 }
 
-.clock_spent {
-
-}
-
-.clock_remaining {
-
-}
-
 .priority_group {
-    min-height: 140px;
+    height: 120px;
     width: auto;
+    border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-.group_heading {
+td.group_heading {
+    width:120px;
     padding-right:.5em;
     text-align: right;
-    font-size: 2em;
-    color: #ccc;
+    font-size: 2.5em;
+    color: #aaa;
+    vertical-align: bottom;
 }
 
-.group_datas {
-margin:0;
-padding:0; 
-margin-left: 9em;
-position:relative;
-top: -2em;  
-
-}
 .group_data {
     padding: 0.8em 0em 0.8em 1.8em;
     width: auto;
     display: inline-block;
+}
+
+table{
+    table-layout: fixed;
 }

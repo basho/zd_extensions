@@ -1,11 +1,17 @@
-<h1>WIP Dashboard</h1>
-
+<h1>SLA Overview Dashboard</h1>
+<br />
 <table class="data_table" width="100%">
 <tr class="priority_group urgent">
-<td class="group_heading">urgent</td>
+<td class="group_heading"><div class="header_text">urgent</div></td>
 <td>        
         {{#each urgents}}
-            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
+
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
                 <div class="ticket_info">
                     <div class="ticket_number">{{id}}</div>
@@ -14,13 +20,19 @@
                 </div>
             </a>
         {{/each}}
-<td>
+</td>
 </tr>
 <tr class="priority_group high">
-<td class="group_heading">high</td>
+<td class="group_heading"><div class="header_text">high</div></td>
 <td>        
         {{#each highs}}
-            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
+
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
                 <div class="ticket_info">
                     <div class="ticket_number">{{id}}</div>
@@ -29,13 +41,19 @@
                 </div>
             </a>
         {{/each}}
-<td>
+</td>
 </tr>
 <tr class="priority_group normal">
-<td class="group_heading">normal</td>
+<td class="group_heading"><div class="header_text">normal</div></td>
 <td>        
         {{#each normals}}
-            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
+
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
                 <div class="ticket_info">
                     <div class="ticket_number">{{id}}</div>
@@ -44,13 +62,19 @@
                 </div>
             </a>
         {{/each}}
-<td>
+</td>
 </tr>
 <tr class="priority_group low">
-<td class="group_heading">low</td>
+<td class="group_heading"><div class="header_text">low</div></td>
 <td>        
         {{#each lows}}
-            <a href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
+            <a           
+title="Subject: {{subject}}
+Status: {{status}}
+SLA Basho Comment: {{sla_basho_comment}}
+SLA Customer Comment: {{sla_customer_comment}}"
+
+            href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
                 <div class="ticket_info">
                     <div class="ticket_number">{{id}}</div>
@@ -59,7 +83,7 @@
                 </div>
             </a>
         {{/each}}
-<td>
+</td>
 </tr>
 </table>
 
