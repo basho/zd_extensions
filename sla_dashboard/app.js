@@ -37,7 +37,7 @@
             low: 24,
             normal: 12,
             high: 4,
-            urgent: 1
+            urgent: 0.5
         },
         amer: {
             group: 'Client Services — AMER"',
@@ -458,7 +458,7 @@
         if (!this.intervalId) {
             console.log("Setting Interval");
             window.zd = this;
-            this.intervalID = setInterval("window.zd.trigger('timerIntervalEnd');",30000);
+            this.intervalID = setInterval("window.zd.trigger('timerIntervalEnd');",60000);
         }
 
         this.trigger('timerIntervalEnd');
@@ -466,7 +466,7 @@
 
     handleIconClick: function(evt) {
         this.trigger('timerIntervalEnd');
-        
+
         // Here's a handy place to plug-in tests
         // this.sla_time_spent_test();
     },
