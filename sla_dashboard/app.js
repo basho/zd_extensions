@@ -73,11 +73,11 @@
 
     msToTime: function(duration) {
         var sign = "";
-        if (duration < 0) {duration = duration * -1; sign = "-"}
-        var milliseconds = parseInt((duration%1000)/100)
-            , seconds = parseInt((duration/1000)%60)
-            , minutes = parseInt((duration/(1000*60))%60)
-            , hours = parseInt((duration/(1000*60*60)))
+        if (duration < 0) {duration = duration * -1; sign = "-";}
+        var milliseconds = parseInt((duration%1000)/100, 10)
+            , seconds = parseInt((duration/1000)%60, 10)
+            , minutes = parseInt((duration/(1000*60))%60, 10)
+            , hours = parseInt((duration/(1000*60*60)),10)
             ;
 
         hours = (hours < 10) ? "0" + hours : hours;
@@ -185,26 +185,26 @@
 
     sla_time_spent_test: function() {
         console.debug("Testing sla_time_spent");
-        SELECTED_SLA = this.SLAs.amer;
-        now_time = Date.parse("2014-04-01T19:00");
+        var SELECTED_SLA = this.SLAs.amer;
+        var now_time = Date.parse("2014-04-01T19:00");
         console.debug(now_time);
         console.debug(moment(now_time));
         // sla_time_spent: function(priority, sla, last_update, now_time) {
         
-        u1 = this.msToTime(this.sla_time_spent("urgent",this.SELECTED_SLA,Date.parse("2014-04-01T18:30"),"u1",now_time).asMilliseconds());
+        var u1 = this.msToTime(this.sla_time_spent("urgent",this.SELECTED_SLA,Date.parse("2014-04-01T18:30"),"u1",now_time).asMilliseconds());
         console.assert("00:30:00" == u1,"u1 - "+u1);
-        u2 = this.msToTime(this.sla_time_spent("urgent",this.SELECTED_SLA,Date.parse("2014-03-28T19:00"),"u2",now_time).asMilliseconds());
+        var u2 = this.msToTime(this.sla_time_spent("urgent",this.SELECTED_SLA,Date.parse("2014-03-28T19:00"),"u2",now_time).asMilliseconds());
         console.assert("96:00:00" == u2,"u2 - "+u2);
 
-        h1 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-04-01T18:30"),"h1",now_time).asMilliseconds());
+        var h1 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-04-01T18:30"),"h1",now_time).asMilliseconds());
         console.assert("00:30:00" == h1,"h1 - "+h1);
-        h2 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-28T19:00"),"h2",now_time).asMilliseconds());
+        var h2 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-28T19:00"),"h2",now_time).asMilliseconds());
         console.assert("24:00:00" == h2,"h2 - "+h2);
-        h3 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-29T19:00"),"h3",now_time).asMilliseconds());
+        var h3 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-29T19:00"),"h3",now_time).asMilliseconds());
         console.assert("18:00:00" == h3,"h3 - "+h3);
-        h4 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-31T19:00"),"h4",now_time).asMilliseconds());
+        var h4 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-03-31T19:00"),"h4",now_time).asMilliseconds());
         console.assert("12:00:00" == h4,"h4 - "+h4);
-        h5 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-04-01T13:00"),"h5",Date.parse("2014-04-01T20:00")).asMilliseconds());
+        var h5 = this.msToTime(this.sla_time_spent("high",this.SELECTED_SLA,Date.parse("2014-04-01T13:00"),"h5",Date.parse("2014-04-01T20:00")).asMilliseconds());
         console.assert("07:00:00" == h5,"h5 - "+h5);
     },
 
@@ -260,17 +260,17 @@
     },
     
     handleTicketAudits: function(data) {
-        ticket_id = data.tickets[0].id;
-        num_pages=Math.ceil(data.count/100);
+        var ticket_id = data.tickets[0].id;
+        var num_pages=Math.ceil(data.count/100);
 
         if (data.previous_page==null) {
             this.handleAllAuditsReturned[ticket_id] = _.after(num_pages, (function(ticket_id) {
                 // This function is using Underscore's after method to defer execution until called
                 // num_pages times.  This should assure us that all of the metrics have been fetched
                 // from Zendesk and to allow for paginated results.
-                ticket = this.ticket_records[ticket_id]
+                var ticket = this.ticket_records[ticket_id];
                 //sort the array
-                audits = ticket.audits;
+                var audits = ticket.audits;
                 audits.sort(function (a, b) {
                     // Sort descending
                     if (a.created_at > b.created_at) return -1;
@@ -279,7 +279,7 @@
                 });
                 
                 // Find the latest comment by a non-"end-user".  This should be a Basho
-                basho_comments = _.filter(audits, function(audit){
+                var basho_comments = _.filter(audits, function(audit){
                     if (audit.author_role != "end-user") { return audit; }
                 });
                 
@@ -295,7 +295,7 @@
                 if (audits.length == 1) {
                    ticket.sla_customer_comment = audits[0].created_at;
                 } else {
-                    for (i = 0; i < audits.length; i++) {
+                    for (var i = 0; i < audits.length; i++) {
                         if (audits[i].author_role == "end-user") {
                             ticket.sla_customer_comment = audits[i].created_at;
                         } else {
@@ -307,8 +307,8 @@
                 }
 
 
-                ts_customer_comment = moment(ticket.sla_customer_comment),
-                ts_basho_comment = moment(ticket.sla_basho_comment);
+                var ts_customer_comment = moment(ticket.sla_customer_comment);
+                var ts_basho_comment = moment(ticket.sla_basho_comment);
 
                 // Last agent reply, or when the ticket went to new/open, whichever
                 // is greater (yes, that means min :-/).
@@ -327,7 +327,7 @@
                 if (ticket.status == "open" || ticket.status == "new") {
                     ticket.time_remaining = this.msToTime(ticket.moments_remaining.asMilliseconds());
                 } else {
-                    ticket.time_spent = moment.duration(0);;
+                    ticket.time_spent = moment.duration(0);
                     ticket.time_remaining = "-";
                 }
 
@@ -343,7 +343,7 @@
             }
         }
         _.each(data.audits, (function(audit) {
-            public_comment = _.filter(audit.events, function(ticket_event){
+            var public_comment = _.filter(audit.events, function(ticket_event){
                 if (ticket_event.type === "Comment" && ticket_event.public === true) {
                     return ticket_event.id;        
                 }
@@ -351,7 +351,7 @@
             if (public_comment.length > 0) { 
                 var mini_audit = {};
                 
-                author = _.filter(data.users, function(user) { return user.id === audit.author_id })[0];
+                var author = _.filter(data.users, function(user) { return user.id === audit.author_id; })[0];
 
                 if (author) {
                     mini_audit.author_name = author.name;
@@ -366,15 +366,15 @@
                 mini_audit.ticket_id = audit.ticket_id;
                 mini_audit.event_id = public_comment[0].id;
                 
-                ticket = this.ticket_records[audit.ticket_id]
+                var ticket = this.ticket_records[audit.ticket_id];
                 ticket.audits.push(mini_audit);
 
-            };
+            }
         }).bind(this));
 
-        ticket = this.ticket_records[ticket_id]
-        var assignee = _.filter(data.users, function(user) { return user.id === data.tickets[0].assignee_id })[0];
-        if (assignee) {ticket.assignee = assignee.name;} else {ticket.assignee = "Unassigned"};
+        var ticket = this.ticket_records[ticket_id];
+        var assignee = _.filter(data.users, function(user) { return user.id === data.tickets[0].assignee_id; })[0];
+        if (assignee) {ticket.assignee = assignee.name;} else {ticket.assignee = "Unassigned";}
 
         this.handleAllAuditsReturned[ticket_id](ticket_id);
     },
@@ -421,7 +421,7 @@
     requests: {
         getTicketList: function(extra_query_params) {
             // Parametered this for future dynamic behaviours
-            status = "pending";
+            var status = "pending";
             return { url: helpers.fmt("/api/v2/search.json?query=status<"+status+"%20group:\"%@\"%20type:ticket%@", this.SELECTED_SLA.group, extra_query_params) };
         },
         getTicketAudits: function(id) {

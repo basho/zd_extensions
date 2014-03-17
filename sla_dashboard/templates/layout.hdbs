@@ -1,13 +1,4 @@
 <header>
-  <style type="text/css">
-  @font-face {
-    font-family: 'DigitalCounter7';
-    src: url('{{assetURL "DigitalCounter7.eot?"}}')  format('eot'),
-    	 url('{{assetURL "DigitalCounter7.woff"}}')  format('woff'), 
-    	 url('{{assetURL "DigitalCounter7.ttf"}}')  format('truetype'), 
-    	 url('{{assetURL "DigitalCounter7.svg#DigitalCounter7"}}')  format('svg');
-  }
-  </style>
   <span class="logo"/>
   <h3>{{setting "name"}}</h3>
 </header>
