@@ -309,8 +309,10 @@
                 var last_update = null;
 
                 if (ticket.sla_basho_comment === null && ticket.sla_customer_comment !== null) {
+                    // there might not be a basho comment. that's okay, Just set last update to the customer's comment.  
+                    // There _must_ be a customer comment to start a ticket
                     console.debug(ticket.id + " - No Basho Comments");
-                    last_update = moment(ticket.sla_customer_comment) 
+                    last_update = moment(ticket.sla_customer_comment);
                 } else {
                     var ts_customer_comment = moment(ticket.sla_customer_comment);
                     var ts_basho_comment = moment(ticket.sla_basho_comment);
