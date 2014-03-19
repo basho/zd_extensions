@@ -9,7 +9,8 @@
 title="Subject: {{subject}}
 Status: {{status}}
 SLA Basho Comment: {{sla_basho_comment}}
-SLA Customer Comment: {{sla_customer_comment}}"
+SLA Customer Comment: {{sla_customer_comment}}
+last_update:{{last_update}}"
 
             href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
@@ -30,7 +31,8 @@ SLA Customer Comment: {{sla_customer_comment}}"
 title="Subject: {{subject}}
 Status: {{status}}
 SLA Basho Comment: {{sla_basho_comment}}
-SLA Customer Comment: {{sla_customer_comment}}"
+SLA Customer Comment: {{sla_customer_comment}}
+last_update:{{last_update}}"
 
             href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
@@ -51,7 +53,8 @@ SLA Customer Comment: {{sla_customer_comment}}"
 title="Subject: {{subject}}
 Status: {{status}}
 SLA Basho Comment: {{sla_basho_comment}}
-SLA Customer Comment: {{sla_customer_comment}}"
+SLA Customer Comment: {{sla_customer_comment}}
+last_update:{{last_update}}"
 
             href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>
@@ -72,7 +75,8 @@ SLA Customer Comment: {{sla_customer_comment}}"
 title="Subject: {{subject}}
 Status: {{status}}
 SLA Basho Comment: {{sla_basho_comment}}
-SLA Customer Comment: {{sla_customer_comment}}"
+SLA Customer Comment: {{sla_customer_comment}}
+last_update:{{last_update}}"
 
             href="#/tickets/{{id}}" id="ticket-{{id}}"  class="ticket">
                 <svg id="dwg-{{id}}" class="ticket_clock"></svg>

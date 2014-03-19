@@ -306,13 +306,19 @@
                     } 
                 }
 
+                var last_update = null;
 
-                var ts_customer_comment = moment(ticket.sla_customer_comment);
-                var ts_basho_comment = moment(ticket.sla_basho_comment);
+                if (ticket.sla_basho_comment === null && ticket.sla_customer_comment !== null) {
+                    console.debug(ticket.id + " - No Basho Comments");
+                    last_update = moment(ticket.sla_customer_comment) 
+                } else {
+                    var ts_customer_comment = moment(ticket.sla_customer_comment);
+                    var ts_basho_comment = moment(ticket.sla_basho_comment);
 
-                // Last agent reply, or when the ticket went to new/open, whichever
-                // is greater (yes, that means min :-/).
-                var last_update = ts_customer_comment.min(ts_basho_comment);
+                    // Last agent reply, or when the ticket went to new/open, whichever
+                    // is greater (yes, that means min :-/).
+                    last_update = ts_customer_comment.min(ts_basho_comment);
+                }
 
                 ticket.last_update = last_update;
                 ticket.time_spent = this.sla_time_spent(ticket.priority,
